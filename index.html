@@ -21,14 +21,15 @@
                     <label for="searchInput" class="form-label">Search for a city</label>
                     <input type="text" class="form-control" id="searchInput">
                 </div>
-                <button type="submit" class="btn btn-primary m-3">Search</button>
+                <button type="submit" class="btn btn-primary m-3" id="btnSearch">Search</button>
             </form>
             <div class="col-6" id="currentInfo">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title" id="cityName">selected city</h5>
+                      <p class="card-text" id="currentTemp">current temp</p>
+                      <p class="card-text" id="currentWind">current wind</p>
+                      <p class="card-text" id="currentHumidity">current humidity</p>
                     </div>
                   </div>
 
@@ -36,44 +37,43 @@
 
 
             <div class="col-3" id="searchHistory">
-                <button class="btn btn-primary m-3">Chicago</button>
+              <h2>Seach History</h2>
+                <button class="col-9 btn btn-secondary m-3">Chicago</button>
+                <button class="col-9 btn btn-secondary m-3">Los Angeles</button>
+                <button class="col-9 btn btn-secondary m-3">Los Angeles</button>
+                <!-- these are there to reference to make the layout work -->
                 <!-- this will get filled up dynamically -->
             </div>
 
             <div class="col-9" id="forecast">
                 <div class="row">
-                    <div class="card col">
+                    <div class="card col" id="day1">
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
-                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                       </div>
-                      <div class="card col">
+                      <div class="card col" id="day2">
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
-                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                       </div>
-                      <div class="card col">
+                      <div class="card col" id="day3">
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
-                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                       </div>
-                      <div class="card col">
+                      <div class="card col" id="day4">
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
-                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                       </div>
-                      <div class="card col">
+                      <div class="card col" id="day5">
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
-                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                       </div>

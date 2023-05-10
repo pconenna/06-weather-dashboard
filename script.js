@@ -49,19 +49,28 @@ function getCity(lon, lat){
             })
         }
     })
-    
+}
+
 function showCurrentWeather(data){
     var cityName = document.querySelector("#cityName");
-    cityName.textContent = data.name;
+    console.log(data.weather.icon) //figure out the icon
+    cityName.textContent = `${data.name}`;
     var currentTemp = document.querySelector('#currentTemp');
     var currentWind = document.querySelector('#currentWind');
     var currentHumidity = document.querySelector('#currentHumidity');
-    currentTemp.textContent = `Temp: ${data.main.temp} *F`;
+    currentTemp.textContent = `Temp: ${data.main.temp} *F`; //format the temp to truncate 
     currentWind.textContent = `Wind: ${data.wind.speed} MPH`;
     currentHumidity.textContent = `Humidity: ${data.main.humidity}%`;
     }
 
+function showForceast(){
+    var url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1dfd6ca54fd859622c9fe8699a7944f0`;
+    if(!lon || !lat){
+        console.log("bad input")
+        return;
+    }
 }
+
 searchform.addEventListener("submit", getCoords)
 
 //event handler for every button

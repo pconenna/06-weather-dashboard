@@ -38,7 +38,7 @@
 
             <div class="col-3" id="searchHistory">
               <h2>Seach History</h2>
-                <button class="col-9 btn btn-secondary m-3">Chicago</button>
+                <button class="col-9 btn btn-secondary m-3" id="btnHistory">Chicago</button>
                 <button class="col-9 btn btn-secondary m-3">Los Angeles</button>
                 <button class="col-9 btn btn-secondary m-3">Los Angeles</button>
                 <!-- these are there to reference to make the layout work -->
@@ -46,35 +46,45 @@
             </div>
 
             <div class="col-9" id="forecast">
-                <div class="row">
-                    <div class="card col" id="day1">
+                <div class="row" id="daysDiv">
+                    <div class="card col" id="day-1">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title">day1</h5>
+                          <p class="card-text" id="temp-1">temp</p>
+                          <p class="card-text" id="wind-1">wind</p>
+                          <p class="card-text" id="humidity-1">humidity</p>
                         </div>
                       </div>
-                      <div class="card col" id="day2">
+                      <div class="card col" id="day-2">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title">day 2</h5>
+                          <p class="card-text" id="temp-2">temp</p>
+                          <p class="card-text" id="wind-2">wind</p>
+                          <p class="card-text" id="humidity-2">humidity</p>
                         </div>
                       </div>
-                      <div class="card col" id="day3">
+                      <div class="card col" id="day-3">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title">day 3</h5>
+                          <p class="card-text" id="temp-3">temp</p>
+                          <p class="card-text" id="wind-3">wind</p>
+                          <p class="card-text" id="humidity-3">humidity</p>
                         </div>
                       </div>
-                      <div class="card col" id="day4">
+                      <div class="card col" id="day-4">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title">day 4</h5>
+                          <p class="card-text" id="temp-4">temp</p>
+                          <p class="card-text" id="wind-4">wind</p>
+                          <p class="card-text" id="humidity-4">humidity</p>
                         </div>
                       </div>
-                      <div class="card col" id="day5">
+                      <div class="card col" id="day-5">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title">day 5</h5>
+                          <p class="card-text" id="temp-5">temp</p>
+                          <p class="card-text" id="wind-5">wind</p>
+                          <p class="card-text" id="humidity-5">humidity</p>
                         </div>
                       </div>
 
@@ -85,6 +95,7 @@
                     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
                     crossorigin="anonymous">
                 </script>
+                <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
                 <script src="script.js"></script>
 </body>
 

@@ -17,7 +17,7 @@ getStoredHistory()
 function getCoords(event){
     event.preventDefault();
     var searchTerm = searchInput.value.trim();
-    var geoCodeURL = `http://api.openweathermap.org/geo/1.0/direct?q=${searchTerm},US&limit=1&appid=1dfd6ca54fd859622c9fe8699a7944f0`
+    var geoCodeURL = `https://api.openweathermap.org/geo/1.0/direct?q=${searchTerm},US&limit=1&appid=1dfd6ca54fd859622c9fe8699a7944f0`
     if(!searchTerm){
         console.log("bad input")
         return;
@@ -41,7 +41,7 @@ function getCoords(event){
 // i had to put some partially redundant code because i need event listeners for the search from and the history buttons
 function getCoordsHistory(event){
     var searchTerm = event.target.textContent.trim();
-    var geoCodeURL = `http://api.openweathermap.org/geo/1.0/direct?q=${searchTerm},US&limit=1&appid=1dfd6ca54fd859622c9fe8699a7944f0`
+    var geoCodeURL = `https://api.openweathermap.org/geo/1.0/direct?q=${searchTerm},US&limit=1&appid=1dfd6ca54fd859622c9fe8699a7944f0`
     if(!searchTerm){
         console.log("bad input")
         return;

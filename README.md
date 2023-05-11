@@ -2,6 +2,7 @@
 
 ## Description
 The weather dashboard shows weather information for a city entered by the user in the search bar. The top card shows the current temperature, humidity level, and wind speed. The forecast cards show the information for the next five days. One thing I should explain is that the Open Weather api returns the forcast for each of the next five days in intervals of three hours. I used the data retruned for noon of each day in my forecast. There is also a search history. When the user types a city name into the search bar and presses the button, a button with that city's name will appear in th ehistory. They can then press the button for information on that city instead of typing it in again. 
+Link to app: https://pconenna.github.io/06-weather-dashboard/ 
 ## Installation 
 N/A
 ## Usage

@@ -10,13 +10,10 @@ if(storedHistory == null){
     storedHistory = [];
     localStorage.setItem("searches", JSON.stringify(storedHistory))
 }
-// var day1 = document.querySelector('#day1');
-// var day2 = document.querySelector('#day2');
-// var day3 = document.querySelector('#day3');
-// var day4 = document.querySelector('#day4');
-// var day5 = document.querySelector('#day5');
 var lat,lon;
 getStoredHistory()
+
+// pulls the coorditantes from the search and passes them to api calls that need them
 function getCoords(event){
     event.preventDefault();
     var searchTerm = searchInput.value.trim();
@@ -63,6 +60,7 @@ function getCoordsHistory(event){
     })
 }
 
+//takes coordinates from search and makes ans api call to get current weather
 function getCurrentWeather(lon, lat){
     var weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=1dfd6ca54fd859622c9fe8699a7944f0`;
     if(!lon || !lat){
@@ -73,17 +71,19 @@ function getCurrentWeather(lon, lat){
     .then(function(response){
         if(response.ok){
             response.json().then(function(data){
+                console.log(data)
                 showCurrentWeather(data);
             })
         }
     })
 }
 
+// gets the needed info out of the response and displays it on the page
 function showCurrentWeather(data){
     var cityName = document.querySelector("#cityName");
     var today = dayjs();
     var icon = data.weather[0].icon
-    console.log(data.weather[0].icon) //figure out the icon
+    console.log(data.weather[0].icon)
     var imgUrl = `https://openweathermap.org/img/wn/${icon}.png`
     iconEl.setAttribute("src",imgUrl)
     cityName.textContent = `${data.name} ${today.format('M-D-YYYY')}`;
@@ -95,6 +95,7 @@ function showCurrentWeather(data){
     currentHumidity.textContent = `Humidity: ${data.main.humidity}%`;
     }
 
+    // makes an api call to get the forecast info
 function getForceast(){
     var url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=1dfd6ca54fd859622c9fe8699a7944f0`;
     if(!lon || !lat){
@@ -111,6 +112,8 @@ function getForceast(){
         }
     })
 }
+
+// pulls the info from the repsonse for each of the next 5 days at noon
 function showForecast(data){
     var days = data.list;
     console.log(data)
@@ -141,10 +144,9 @@ function showForecast(data){
         
 
     }
-    //accessing the icon is gonna be different for this
    
     }
-
+// add the query from the search bar to the history and lcoal storage
 function addSearchHistory(city){
     var btn = document.createElement("button")
     btn.textContent = city;
@@ -154,7 +156,7 @@ function addSearchHistory(city){
     storedHistory.push({'searchTerm':city})
     localStorage.setItem("searches", JSON.stringify(storedHistory))
 }
-
+// gets the history out of local storage to display on page load
 function getStoredHistory(){
     for(var i = 0; i < storedHistory.length; i++){
         var btn = document.createElement("button")
@@ -166,14 +168,3 @@ function getStoredHistory(){
     
 }
 searchform.addEventListener("submit", getCoords)
-// var btnH = document.querySelector('#btnHistory')
-// btnH.addEventListener("click",getCoordsHistory)
-
-//event handler for every button
-
-//dynamically generate the search history
-
-//dynamically replace the content in the cards
-
-
-//api calls 
